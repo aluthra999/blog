@@ -1,6 +1,11 @@
 {% extends "base.html" %} {% block title %} Create Post {% endblock %} {% block
 content%}
-<h1 class="h1">Make a Post</h1>
+<div class="d-flex justify-content-between">
+  <h1 class="h1">Make a Post</h1>
+  <a href="/home"
+    ><button class="btn btn-lg btn-outline-danger">Cancel</button></a
+  >
+</div>
 <hr />
 <form method="POST">
   <textarea
@@ -20,8 +25,8 @@ content%}
     placeholder="Blog Text"
   ></textarea>
   <br />
-  <div align="center">
-    <button type="submit" class="btn btn-lg btn-primary">Post</button>
+  <div class="d-flex">
+    <button type="submit" class="btn btn-lg btn-primary flex-fill">Post</button>
   </div>
 </form>
 {% endblock %}
