@@ -1,9 +1,8 @@
-# In __init__.py
 from flask import Flask
 from os import path
 from flask_login import LoginManager
 from .database import db  # Import the db object from database.py
-from .models import User, Post
+from .models import User, Post, Comment
 from .views import views
 from .auth import auth
 
@@ -20,7 +19,6 @@ def create_app():
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
 
-    # Move the create_database function call inside a Flask route or view function
     @app.route('/create_database')
     def create_database():
         if not path.exists("website/" + DB_NAME):
